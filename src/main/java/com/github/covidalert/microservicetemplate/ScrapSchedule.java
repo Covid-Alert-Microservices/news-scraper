@@ -5,6 +5,7 @@ import com.github.covidalert.microservicetemplate.services.NewsDOMParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import reactor.core.publisher.Mono;
 
 @Component
 public class ScrapSchedule
@@ -21,8 +22,7 @@ public class ScrapSchedule
     {
         var body = this.covidTrackerFetcher.fetchCovidTrackerHomePage();
         var news = body.map(this.newsDOMParser::getNewsFromCovidTrackerBody);
-        var result = news.block();
-        System.out.println(result);
+        news.flatMap(Mono::justOrEmpty).subscribe(System.out::println);
     }
 
 }
