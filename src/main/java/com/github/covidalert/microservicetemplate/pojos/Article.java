@@ -1,5 +1,7 @@
 package com.github.covidalert.microservicetemplate.pojos;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.time.ZonedDateTime;
 import java.util.Objects;
 
@@ -8,6 +10,7 @@ public class Article
 
     private final String title;
     private final String summary;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSX")
     private final ZonedDateTime date;
     private final String link;
 
