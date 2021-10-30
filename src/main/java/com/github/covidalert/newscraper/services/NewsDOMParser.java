@@ -1,6 +1,6 @@
-package com.github.covidalert.microservicetemplate.services;
+package com.github.covidalert.newscraper.services;
 
-import com.github.covidalert.microservicetemplate.pojos.Article;
+import com.github.covidalert.newscraper.pojos.Article;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;

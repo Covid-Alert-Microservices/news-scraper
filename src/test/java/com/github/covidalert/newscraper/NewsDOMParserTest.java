@@ -1,7 +1,7 @@
-package com.github.covidalert.microservicetemplate;
+package com.github.covidalert.newscraper;
 
-import com.github.covidalert.microservicetemplate.pojos.Article;
-import com.github.covidalert.microservicetemplate.services.NewsDOMParser;
+import com.github.covidalert.newscraper.pojos.Article;
+import com.github.covidalert.newscraper.services.NewsDOMParser;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

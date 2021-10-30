@@ -1,4 +1,4 @@
-package com.github.covidalert.microservicetemplate;
+package com.github.covidalert.newscraper;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

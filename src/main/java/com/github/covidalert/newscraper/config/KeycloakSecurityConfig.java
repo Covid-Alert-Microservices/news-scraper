@@ -1,4 +1,4 @@
-package com.github.covidalert.microservicetemplate.config;
+package com.github.covidalert.newscraper.config;
 
 import org.keycloak.adapters.KeycloakConfigResolver;
 import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver;

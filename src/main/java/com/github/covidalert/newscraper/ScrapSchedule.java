@@ -1,8 +1,7 @@
-package com.github.covidalert.microservicetemplate;
+package com.github.covidalert.newscraper;
 
-import com.github.covidalert.microservicetemplate.pojos.Article;
-import com.github.covidalert.microservicetemplate.services.CovidTrackerFetcher;
-import com.github.covidalert.microservicetemplate.services.NewsDOMParser;
+import com.github.covidalert.newscraper.services.CovidTrackerFetcher;
+import com.github.covidalert.newscraper.services.NewsDOMParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;

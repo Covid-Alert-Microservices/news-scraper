@@ -1,4 +1,4 @@
-package com.github.covidalert.microservicetemplate.services;
+package com.github.covidalert.newscraper.services;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;

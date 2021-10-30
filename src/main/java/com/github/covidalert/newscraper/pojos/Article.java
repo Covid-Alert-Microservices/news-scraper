@@ -1,4 +1,4 @@
-package com.github.covidalert.microservicetemplate.pojos;
+package com.github.covidalert.newscraper.pojos;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
