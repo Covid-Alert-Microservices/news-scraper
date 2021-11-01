@@ -32,17 +32,15 @@ public class ScrapSchedule
         var body = this.covidTrackerFetcher.fetchCovidTrackerHomePage();
         var news = body.map(this.newsDOMParser::getNewsFromCovidTrackerBody);
         news.flatMap(Mono::justOrEmpty).subscribe((articles ->
-        {
-            WebClient
-                    .create(String.format("%s/api/news", newsMicroservice))
-                    .put()
-                    .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
-                    .body(Mono.just(articles), List.class)
-                    .retrieve()
-                    .toBodilessEntity()
-                    .doOnError(System.err::println)
-                    .subscribe();
-        }));
+                WebClient
+                        .create(String.format("%s/api/news", newsMicroservice))
+                        .put()
+                        .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
+                        .body(Mono.just(articles), List.class)
+                        .retrieve()
+                        .toBodilessEntity()
+                        .doOnError(System.err::println)
+                        .subscribe()));
     }
 
 }
