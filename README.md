@@ -1,56 +1,16 @@
-# Microservice template [![Build](https://github.com/Covid-Alert-Microservices/news-scraper/actions/workflows/build.yaml/badge.svg)](https://github.com/Covid-Alert-Microservices/news-scraper/actions/workflows/build.yaml)
+# News Scraper [![Build](https://github.com/Covid-Alert-Microservices/news-scraper/actions/workflows/build.yaml/badge.svg)](https://github.com/Covid-Alert-Microservices/news-scraper/actions/workflows/build.yaml)
 
-This repository aims to provide a starter template for our microservices.
-It provides the base configuration to integrate with other microservices as Keycloak.
+This repository contains the source code for the microservice responsible for scraping the latest 
+news from [CovidTracker](https://covidtracker.fr/).
 
-## Currently shipped in the template
+## Development environment
 
-- Configuration of Spring Security to only accept authenticated request on `/api/**`
-- Authentication of requests with Keycloak
-- Listening and publishing of Kafka topics
-- CI to build the application
+Clone the repository and browser to project's folder:
 
-## Environment variables
+`git clone git@github.com:Covid-Alert-Microservices/news-scraper.git && cd news-scraper`
 
-The following environment variables can be configured:
-- `KEYCLOAK_URL`: the URL to the Keycloak instance (default: `http://localhost:5000`)
-- `KAFKA_URL`: the URL to the Kafka node (default: `http://localhost:29092`)
-- `POSTGRES_HOST`: the host for the PostgreSQL database (default: `localhost:5432/postgres`)
-- `POSTGRES_USER`: the user for the PostgreSQL database (default: `postgres`)
-- `POSTGRES_PASSWORD`: the password for the PostgreSQL database (default: `postgres`)
+Start the application:
 
-## Removing unused parts
+`./gradlew bootRun` (or start it using your IDE)
 
-### Keycloak
-
-- Delete classes
-  - `MyController`
-  - `KeycloakSecurityConfig`
-- Delete lines
-  - Keycloak related lines in `application.properties`
-  - Keycloak related lines in `build.gradle`
-
-### Kafka
-
-- Delete classes
-  - `KafkaConfig`
-  - `PingPongListener`
-- Delete lines
-  - Kafka related lines in `application.properties` in both `main` and `test` source-sets
-  - Kafka related lines in `build.gradle`
-
-### PostgreSQL
-
-- Delete classes
-  - `Movie`
-  - `MoviesRepositories`
-- Delete lines
-  - Postgres related in `application.properties` in both `main` and `test` source-sets
-  - Postgres related in `build.gradle`
-
-### Redis
-
-- Delete classes
-  - `RedisController`
-- Delete lines
-  - Redis related in `build.gradle`
+The service microservice is available at http://localhost:8090 but doesn't expose any endpoint.
