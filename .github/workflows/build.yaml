@@ -19,3 +19,22 @@ jobs:
         run: |
           chmod a+x ./gradlew
           ./gradlew build
+
+  deploy:
+    if: github.ref == 'refs/heads/master' && success()
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup SSH and deploy to Dokku
+        env:
+          SSH_KEY: ${{ secrets.DOKKU_SSH_KEY }}
+        run: |
+          which ssh-agent || (apt-get update -y && apt-get install openssh-client -y)
+          eval $(ssh-agent -s)
+          echo "$SSH_KEY" | tr -d '\r' | ssh-add -
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          ssh-keyscan "vps.florent.best" >> ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+          tar -c . | ssh dokku@vps.florent.best git:from-archive news-provider
