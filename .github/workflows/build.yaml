@@ -26,6 +26,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v2
       - name: Setup SSH and deploy to Dokku
         env:
           SSH_KEY: ${{ secrets.DOKKU_SSH_KEY }}
@@ -37,4 +38,5 @@ jobs:
           chmod 700 ~/.ssh
           ssh-keyscan "vps.florent.best" >> ~/.ssh/known_hosts
           chmod 644 ~/.ssh/known_hosts
-          tar -c . | ssh dokku@vps.florent.best git:from-archive news-provider
+          git remote add dokku dokku@vps.florent.best:news-scraper
+          git push dokku master
