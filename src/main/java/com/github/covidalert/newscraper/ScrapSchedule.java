@@ -26,7 +26,7 @@ public class ScrapSchedule
     @Autowired
     private NewsDOMParser newsDOMParser;
 
-    @Scheduled(cron = "0 0 */5 * * *")
+    @Scheduled(cron = "0 */30 * * * *")
     public void fetchArticlesFromCovidTracker()
     {
         var body = this.covidTrackerFetcher.fetchCovidTrackerHomePage();
@@ -40,7 +40,7 @@ public class ScrapSchedule
                         .retrieve()
                         .toBodilessEntity()
                         .doOnError(System.err::println)
-                        .subscribe()));
+                        .subscribe((_void) -> System.out.println("Successfully updated news"))));
     }
 
 }

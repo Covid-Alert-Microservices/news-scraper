@@ -27,6 +27,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Setup SSH and deploy to Dokku
         env:
           SSH_KEY: ${{ secrets.DOKKU_SSH_KEY }}
