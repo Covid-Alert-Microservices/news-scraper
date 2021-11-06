@@ -26,7 +26,7 @@ public class ScrapSchedule
     @Autowired
     private NewsDOMParser newsDOMParser;
 
-    @Scheduled(cron = "0 */30 * * * *")
+    @Scheduled(cron = "*/30 * * * * *")
     public void fetchArticlesFromCovidTracker()
     {
         var body = this.covidTrackerFetcher.fetchCovidTrackerHomePage();
