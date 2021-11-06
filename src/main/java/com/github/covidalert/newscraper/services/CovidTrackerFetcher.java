@@ -11,6 +11,7 @@ public class CovidTrackerFetcher
 
     public Mono<String> fetchCovidTrackerHomePage()
     {
+        System.out.println("Fetching CovidTracker page ...");
         WebClient webClient = WebClient.create("https://covidtracker.fr/");
         var response = webClient.get().retrieve();
         return response.bodyToMono(String.class);

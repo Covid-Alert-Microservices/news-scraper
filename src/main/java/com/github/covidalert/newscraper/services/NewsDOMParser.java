@@ -18,6 +18,7 @@ public class NewsDOMParser
 
     public Optional<List<Article>> getNewsFromCovidTrackerBody(String covidTrackerBody)
     {
+        System.out.println("Parsing CovidTracker DOM ...");
         var doc = parseHtml(covidTrackerBody);
         var newsBlock = getNewsBlock(doc);
         return newsBlock.map(this::getArticles);
