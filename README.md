@@ -14,3 +14,7 @@ Start the application:
 `./gradlew bootRun` (or start it using your IDE)
 
 The service microservice is available at http://localhost:8090 but doesn't expose any endpoint.
+
+## Dependencies
+
+This application is soft-dependent to [news-provider](https://github.com/Covid-Alert-Microservices/news-provider). You can start this service without news-provider but you won't be provided any befenit from it.
