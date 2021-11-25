@@ -1,4 +1,4 @@
-# News Scraper [![Build](https://github.com/Covid-Alert-Microservices/news-scraper/actions/workflows/build.yaml/badge.svg)](https://github.com/Covid-Alert-Microservices/news-scraper/actions/workflows/build.yaml)
+# News Scraper [![Build](https://github.com/Covid-Alert-Microservices/news-scraper/actions/workflows/build.yaml/badge.svg)](https://github.com/Covid-Alert-Microservices/news-scraper/actions/workflows/build.yaml) [![codecov](https://codecov.io/gh/Covid-Alert-Microservices/news-scraper/branch/master/graph/badge.svg?token=NKRLK3F9RG)](https://codecov.io/gh/Covid-Alert-Microservices/news-scraper)
 
 This repository contains the source code for the microservice responsible for scraping the latest 
 news from [CovidTracker](https://covidtracker.fr/).
@@ -17,4 +17,4 @@ The service microservice is available at http://localhost:8090 but doesn't expos
 
 ## Dependencies
 
-This application is soft-dependent to [news-provider](https://github.com/Covid-Alert-Microservices/news-provider). You can start this service without news-provider but you won't be provided any befenit from it.
+This application is soft-dependent to [news-provider](https://github.com/Covid-Alert-Microservices/news-provider). You can start this service without news-provider, but you won't be provided any benefit from it.

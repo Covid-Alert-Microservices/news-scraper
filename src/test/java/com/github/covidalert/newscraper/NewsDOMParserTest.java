@@ -3,8 +3,6 @@ package com.github.covidalert.newscraper;
 import com.github.covidalert.newscraper.pojos.Article;
 import com.github.covidalert.newscraper.services.NewsDOMParser;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
@@ -17,7 +15,6 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest
 public class NewsDOMParserTest
 {
 
@@ -67,8 +64,7 @@ public class NewsDOMParserTest
         );
     }
 
-    @Autowired
-    private NewsDOMParser parser;
+    private final NewsDOMParser parser = new NewsDOMParser();
 
     private String readRawHtml()
     {
